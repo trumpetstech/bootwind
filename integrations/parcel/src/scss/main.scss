@@ -1,0 +1,38 @@
+// Import the default variables and function
+@import "@trumpetstech/bootwind/core/functions";
+
+// Your theme's variables
+@import "./variables";
+
+// Bootwind CSS
+@import "@trumpetstech/bootwind/base";
+@import "@trumpetstech/bootwind/forms";
+
+// Import all components at once
+@import "@trumpetstech/bootwind/components";
+
+// Import components individually
+// @import "@trumpetstech/bootwind/components/accordions";
+// @import "@trumpetstech/bootwind/components/alerts";
+// @import "@trumpetstech/bootwind/components/avatars";
+// @import "@trumpetstech/bootwind/components/badges";
+// @import "@trumpetstech/bootwind/components/breadcrumbs";
+// @import "@trumpetstech/bootwind/components/buttons";
+// @import "@trumpetstech/bootwind/components/carousels";
+// @import "@trumpetstech/bootwind/components/close";
+// @import "@trumpetstech/bootwind/components/dropdowns";
+// @import "@trumpetstech/bootwind/components/icons";
+// @import "@trumpetstech/bootwind/components/list-groups";
+// @import "@trumpetstech/bootwind/components/overlays";
+// @import "@trumpetstech/bootwind/components/navbars";
+// @import "@trumpetstech/bootwind/components/navs";
+// @import "@trumpetstech/bootwind/components/cards";
+// @import "@trumpetstech/bootwind/components/omnisearches";
+// @import "@trumpetstech/bootwind/components/paginations";
+// @import "@trumpetstech/bootwind/components/placeholders";
+// @import "@trumpetstech/bootwind/components/popovers";
+// @import "@trumpetstech/bootwind/components/progress";
+// @import "@trumpetstech/bootwind/components/spinners";
+// @import "@trumpetstech/bootwind/components/tables";
+// @import "@trumpetstech/bootwind/components/toasts";
+// @import "@trumpetstech/bootwind/components/tooltips";
