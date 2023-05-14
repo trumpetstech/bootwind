@@ -111,4 +111,4 @@ Get updates on the development of our CSS tool and chat with the project maintai
 
 ## License
 
-Made with ❤️ by [Bootwind](https://bootwind.trumpetstech.com?ref=github). Bootwind CSS is open-sourced software licensed under the [MIT license](https://github.com/trumpetstech/bootwind/blob/master/LICENSE).
+Made with ❤️ by [Trumpets](https://trumpetstech.com?ref=github). Bootwind CSS is open-sourced software licensed under the [MIT license](https://github.com/trumpetstech/bootwind/blob/master/LICENSE).
