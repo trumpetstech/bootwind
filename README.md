@@ -52,7 +52,7 @@ or pick the parts you need:
 @import "@trumpetstech/bootwind/components/cards";
 ```
 
-[**Click here**](https://github.com/trumpetstech/bootwind/blob/master/scss/components/_index.scss) to see the complete
+[**Click here**](https://github.com/trumpetstech/bootwind/blob/main/scss/components/_index.scss) to see the complete
 list of available components.
 
 ### Import the utility classes
@@ -77,7 +77,7 @@ In your utility.scss you'll import all the utilities:
 If you want to see how it works, check out these functional examples of using Bootstrap and Bootwind CSS in common JS
 frameworks like Webpack, Parcel, Vite, and more!
 
-[See all integrations](https://github.com/trumpetstech/bootwind/tree/master/integrations)
+[See all integrations](https://github.com/trumpetstech/bootwind/tree/main/integrations)
 
 [//]: # (## Detailed UI components library)
 

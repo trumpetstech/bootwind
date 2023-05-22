@@ -19,7 +19,8 @@
     "framework",
     "web",
     "component-centric",
-    "utilities"
+    "utilities",
+    "bootstrap with tailwind"
   ],
   "homepage": "https://bootwind.trumpetstech.com",
   "author": "Trumpets Tech (https://trumpetstech.io)",

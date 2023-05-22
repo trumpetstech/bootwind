@@ -10,14 +10,14 @@ $utilities-colors: map-collect(
 
 // scss-docs-start utilities-text-colors
 $utilities-text: map-merge(
-								$utilities-colors,
-								(
-												"white": to-rgb($white),
-												"black": to-rgb($black),
-												"body": to-rgb($body-color),
-												"muted": to-rgb($text-muted),
-												"heading": to-rgb($headings-color)
-								)
+			$utilities-colors,
+			(
+							"white": to-rgb($white),
+							"black": to-rgb($black),
+							"body": to-rgb($body-color),
+							"muted": to-rgb($text-muted),
+							"heading": to-rgb($headings-color)
+			)
 ) !default;
 $utilities-text-colors: map-loop($utilities-text, rgba-css-var, "$key", "text") !default;
 // scss-docs-end utilities-text-colors
@@ -63,13 +63,13 @@ $utilities-font-size-values: (
 				md: $font-size-md,
 				lg: $font-size-lg,
 				xl: $font-size-xl,
-				2 xl: $font-size-2xl,
-				3 xl: $font-size-3xl,
-				4 xl: $font-size-4xl,
-				5 xl: $font-size-5xl,
-				6 xl: $font-size-6xl,
-				7 xl: $font-size-7xl,
-				8 xl: $font-size-8xl,
+				2xl: $font-size-2xl,
+				3xl: $font-size-3xl,
+				4xl: $font-size-4xl,
+				5xl: $font-size-5xl,
+				6xl: $font-size-6xl,
+				7xl: $font-size-7xl,
+				8xl: $font-size-8xl,
 ) !default;
 
 $utilities-font-weight-values: (
@@ -274,17 +274,17 @@ $utilities-perspective-values: (
 ) !default;
 
 $utilities-translate-values: map-collect(
-								$spacers,
-								(
-												1 \/2: 50%,
-												1 \/3: 33.333333%,
-												1 \/4: 25%,
-												1 \/5: 20%,
-												2 \/3: 66.666667%,
-												2 \/5: 50%,
-												3 \/4: 75%,
-												full: 100%
-								)
+				$spacers,
+				(
+								1\/2: 50%,
+								1\/3: 33.333333%,
+								1\/4: 25%,
+								1\/5: 20%,
+								2\/3: 66.666667%,
+								2\/5: 50%,
+								3\/4: 75%,
+								full: 100%
+				)
 ) !default;
 
 $utilities-skew-values: (

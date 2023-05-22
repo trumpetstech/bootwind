@@ -218,3 +218,93 @@ a.text-current {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.line-clamp-4 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+}
+
+.line-clamp-5 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+}
+
+.line-clamp-6 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}
+
+.line-clamp-none {
+	overflow: visible;
+	display: block;
+	-webkit-box-orient: horizontal;
+	-webkit-line-clamp: none;
+}
+
+.list-image-none {
+	list-style-image: none;
+}
+
+.list-inside {
+	list-style-position: inside;
+}
+
+.list-outside {
+	list-style-position: outside;
+}
+
+.list-none {
+	list-style-type: none;
+}
+
+.list-disc {
+	list-style-type: disc;
+}
+
+.list-decimal {
+	list-style-type: decimal;
+}
+
+
+.fv-normal-nums {
+	font-variant-numeric: normal;
+}
+
+.fv-ordinal {
+	font-variant-numeric: ordinal;
+}
+
+.fv-slashed-zero {
+	font-variant-numeric: slashed-zero;
+}
+
+.fv-lining-nums {
+	font-variant-numeric: lining-nums;
+}
+
+.fv-oldstyle-nums {
+	font-variant-numeric: oldstyle-nums;
+}
+
+.fv-proportional-nums {
+	font-variant-numeric: proportional-nums;
+}
+
+.fv-tabular-nums {
+	font-variant-numeric: tabular-nums;
+}
+
+.fv-diagonal-fractions {
+	font-variant-numeric: diagonal-fractions;
+}
+
+.fv-stacked-fractions {
+	font-variant-numeric: stacked-fractions;
+}
+
