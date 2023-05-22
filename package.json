@@ -1,7 +1,7 @@
 {
   "name": "@trumpetstech/bootwind",
   "description": "Utility and component-centric design system based on Bootstrap for fast, responsive UI development.",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "version_short": "1.0",
   "license": "MIT",
   "style": "dist/index.css",
