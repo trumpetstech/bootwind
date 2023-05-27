@@ -10,14 +10,14 @@ $utilities-colors: map-collect(
 
 // scss-docs-start utilities-text-colors
 $utilities-text: map-merge(
-			$utilities-colors,
-			(
-							"white": to-rgb($white),
-							"black": to-rgb($black),
-							"body": to-rgb($body-color),
-							"muted": to-rgb($text-muted),
-							"heading": to-rgb($headings-color)
-			)
+								$utilities-colors,
+								(
+												"white": to-rgb($white),
+												"black": to-rgb($black),
+												"body": to-rgb($body-color),
+												"muted": to-rgb($text-muted),
+												"heading": to-rgb($headings-color)
+								)
 ) !default;
 $utilities-text-colors: map-loop($utilities-text, rgba-css-var, "$key", "text") !default;
 // scss-docs-end utilities-text-colors
@@ -40,6 +40,19 @@ $utilities-bg: map-merge(
 ) !default;
 $utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !default;
 // scss-docs-end utilities-bg-colors
+
+
+$utilities-bg-position: (
+				"bottom": bottom,
+				"center": center,
+				"left": left,
+				"left-bottom": left bottom,
+				"left-top": left top,
+				"right": right,
+				"right-bottom": right bottom,
+				"right-top": right top,
+				"top": top,
+) !default;
 
 $utilities-static-bg-colors: (
 				"transparent": transparent,
@@ -80,7 +93,19 @@ $utilities-font-weight-values: (
 				semibold: $font-weight-semibold,
 				bold: $font-weight-bold,
 				bolder: $font-weight-bolder,
-			  black: $font-weight-black
+				black: $font-weight-black
+) !default;
+
+$utilities-font-variant-values: (
+				"normal-nums": normal,
+				ordinal: ordinal,
+				"slashed-zero": slashed-zero,
+				"lining-nums": lining-nums,
+				"oldstyle-nums": oldstyle-nums,
+				"proportional-nums": proportional-nums,
+				"tabular-nums": tabular-nums,
+				"diagonal-fractions": diagonal-fractions,
+				"stacked-fractions": stacked-fractions,
 ) !default;
 
 $utilities-text-align-values: (
@@ -95,8 +120,20 @@ $utilities-text-align-values: (
 $utilities-text-decoration-values: (
 				no-decoration: none,
 				underline: underline,
-				line-through: line-through
+				line-through: line-through,
+				overline: overline,
 ) !default;
+
+// scss-docs-start utilities-text-decoration-colors
+$utilities-text-decoration-colors: map-merge(
+								$utilities-colors,
+								(
+												"black": to-rgb($black),
+												"white": to-rgb($white)
+								)
+) !default;
+$utilities-text-decoration-color-values: map-loop($utilities-text-decoration-colors, rgba-css-var, "$key", "text") !default;
+// scss-docs-end utilities-text-decoration-colors
 
 $utilities-line-height-values: (
 				none: 1,
@@ -274,17 +311,17 @@ $utilities-perspective-values: (
 ) !default;
 
 $utilities-translate-values: map-collect(
-				$spacers,
-				(
-								1\/2: 50%,
-								1\/3: 33.333333%,
-								1\/4: 25%,
-								1\/5: 20%,
-								2\/3: 66.666667%,
-								2\/5: 50%,
-								3\/4: 75%,
-								full: 100%
-				)
+								$spacers,
+								(
+												1 \/2: 50%,
+												1 \/3: 33.333333%,
+												1 \/4: 25%,
+												1 \/5: 20%,
+												2 \/3: 66.666667%,
+												2 \/5: 50%,
+												3 \/4: 75%,
+												full: 100%
+								)
 ) !default;
 
 $utilities-skew-values: (
@@ -295,3 +332,4 @@ $utilities-skew-values: (
 				6: 6deg,
 				12: 12deg,
 ) !default;
+

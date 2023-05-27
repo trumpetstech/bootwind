@@ -23,11 +23,15 @@ $utilities: map-merge($utilities, (
   "viewport-width": null,
   "opacity": (
     property: opacity,
+		state: hover,
+	  responsive: true,
     values: $utilities-opacity-values
   ),
   "zindex": (
     property: z-index,
     class: overlap,
+		state: hover,
+		responsive: true,
     values: $utilities-zindex-values
   ),
 
@@ -35,54 +39,63 @@ $utilities: map-merge($utilities, (
   "rounded": (
     property: border-radius,
     class: rounded,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-top": (
     property: border-top-left-radius border-top-right-radius,
     class: rounded-top,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-end": (
     property: border-top-right-radius border-bottom-right-radius,
     class: rounded-end,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-bottom": (
     property: border-bottom-right-radius border-bottom-left-radius,
     class: rounded-bottom,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-start": (
     property: border-bottom-left-radius border-top-left-radius,
     class: rounded-start,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-top-start": (
     property: border-top-left-radius,
     class: rounded-top-start,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-top-end": (
     property: border-top-right-radius,
     class: rounded-top-end,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-bottom-end": (
     property: border-bottom-right-radius,
     class: rounded-bottom-end,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
   "rounded-bottom-start": (
     property: border-bottom-left-radius,
     class: rounded-bottom-start,
+		state: hover,
     responsive: true,
     values: $utilities-border-radius
   ),
@@ -92,17 +105,22 @@ $utilities: map-merge($utilities, (
     css-var: true,
     css-variable-name: border-width,
     class: border,
+		state: hover focus,
+		responsive: true,
     values: $utilities-border-widths
   ),
   "border-opacity": (
     css-var: true,
     class: border-opacity,
+		state: hover focus,
+		responsive: true,
     values: $utilities-opacity-values
   ),
   "border-color": (
     property: border-color,
     class: border,
     state: hover focus,
+		responsive: true,
     local-vars: (
       "border-opacity": 1
     ),
@@ -111,16 +129,21 @@ $utilities: map-merge($utilities, (
   "static-border-color": (
     property: border-color,
     class: border,
+		state: hover focus,
+		responsive: true,
     values: $utilities-static-border-color-values
   ),
   "border-style": (
     css-var: true,
     css-variable-name: border-style,
     class: border,
+		state: hover focus,
+		responsive: true,
     values: solid dashed dotted double groove none
   ),
   "border": (
     property: border,
+		state: hover focus,
     responsive: true,
     values: (
       null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
@@ -130,6 +153,7 @@ $utilities: map-merge($utilities, (
   "border-top": (
     property: border-top,
     class: border-top,
+		state: hover focus,
     responsive: true,
     values: (
       null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
@@ -139,6 +163,7 @@ $utilities: map-merge($utilities, (
   "border-end": (
     property: border-right,
     class: border-end,
+		state: hover focus,
     responsive: true,
     values: (
       null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
@@ -148,6 +173,7 @@ $utilities: map-merge($utilities, (
   "border-bottom": (
     property: border-bottom,
     class: border-bottom,
+		state: hover focus,
     responsive: true,
     values: (
       null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
@@ -157,6 +183,7 @@ $utilities: map-merge($utilities, (
   "border-start": (
     property: border-left,
     class: border-start,
+		state: hover focus,
     responsive: true,
     values: (
       null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
@@ -168,6 +195,8 @@ $utilities: map-merge($utilities, (
   "cursor": (
     property: cursor,
     class: cursor,
+		state: hover focus,
+		responsive: true,
     values: auto pointer wait text,
   ),
 
@@ -175,54 +204,137 @@ $utilities: map-merge($utilities, (
   "font-family": (
     property: font-family,
     class: font,
+		responsive: true,
     values: $utilities-font-family-values
   ),
   "font-size": (
     rfs: true,
     property: font-size,
     class: text,
+		state: hover focus,
+		responsive: true,
     values: $utilities-font-size-values
   ),
   "font-style": (
     property: font-style,
     class: font,
+		state: hover focus,
+		responsive: true,
     values: italic normal
   ),
   "font-weight": (
     property: font-weight,
     class: font,
+		state: hover focus,
+		responsive: true,
     values: $utilities-font-weight-values
   ),
+	"font-variant": (
+					property: font-variant-numeric,
+					class: font,
+					state: hover focus,
+					responsive: true,
+					values: $utilities-font-variant-values
+	),
   "text-transform": (
     property: text-transform,
     class: text,
+		state: hover focus,
+		responsive: true,
     values: lowercase uppercase capitalize,
   ),
   "text-align": (
     property: text-align,
     class: text,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: $utilities-text-align-values
   ),
   "text-decoration": (
     property: text-decoration,
     class: text,
+		state: hover focus,
+		responsive: true,
     values: $utilities-text-decoration-values
   ),
+	"text-decoration-color": (
+		property: text-decoration-color,
+		class: text-decoration,
+		state: hover focus,
+		responsive: true,
+		local-vars: (
+						"text-opacity": 1
+		),
+		values: $utilities-text-decoration-color-values,
+	),
+	"text-decoration-style": (
+			property: text-decoration-style,
+			class: text-decoration,
+			state: hover focus,
+			responsive: true,
+			values: solid double dotted dashed wavy
+	),
+	"text-decoration-thickness": (
+					property: text-decoration-thickness,
+					class: text-decoration,
+					state: hover focus,
+					responsive: true,
+					values: map-collect($utilities-border-widths, (auto: auto, "from-font": from-font))
+	),
+	"text-underline-offset": (
+					property: text-underline-offset,
+					class: text-underline-offset,
+					state: hover focus,
+					responsive: true,
+					values: map-collect($utilities-border-widths, (auto: auto))
+	),
+	"text-indent": (
+					property: text-indent,
+					class: text-indent,
+					state: hover focus,
+					responsive: true,
+					values: $spacer-values
+	),
+	"whitespace": (
+					property: white-space,
+					class: whitespace,
+					state: hover focus,
+					responsive: true,
+					values: normal nowrap pre pre-line pre-wrap break-spaces
+	),
+	"wordbreak": (
+					property: overflow-wrap word-break,
+					class: wordbreak,
+					state: hover focus,
+					responsive: true,
+					values: normal break-word break-all keep-all
+	),
+	"hyphens": (
+					property: hyphens,
+					class: hyphens,
+					state: hover focus,
+					responsive: true,
+					values: none manual auto
+	),
   "line-height": (
     property: line-height,
     class: lh,
+		state: hover focus,
+		responsive: true,
     values: $utilities-line-height-values
   ),
   "letter-spacing": (
     property: letter-spacing,
     class: ls,
+		state: hover focus,
+		responsive: true,
     values: $utilities-letter-spacing-values
   ),
   "color": (
     property: color,
     class: text,
-    state: hover,
+		state: hover focus,
+		responsive: true,
     local-vars: (
       "text-opacity": 1
     ),
@@ -231,12 +343,15 @@ $utilities: map-merge($utilities, (
   "static-color": (
     property: color,
     class: text,
+		state: hover focus,
+		responsive: true,
     values: $utilities-static-text-colors
   ),
   "text-opacity": (
     css-var: true,
     class: text-opacity,
-    state: hover,
+		state: hover focus,
+		responsive: true,
     values: $utilities-opacity-values
   ),
 
@@ -244,15 +359,50 @@ $utilities: map-merge($utilities, (
   "background-color": (
     property: background-color,
     class: bg,
-    state: hover,
+		state: hover focus,
+		responsive: true,
     local-vars: (
       "bg-opacity": 1
     ),
     values: $utilities-bg-colors
   ),
+	"background-attachment": (
+					property: background-attachment,
+					class: bg,
+					state: hover focus,
+					responsive: true,
+					values: fixed local scroll
+	),
+	"background-origin": (
+					property: background-origin,
+					class: bg-origin,
+					state: hover focus,
+					responsive: true,
+					values: (
+							border: border-box,
+							padding: padding-box,
+							content: content-box
+					)
+	),
+	"background-position": (
+					property: background-position,
+					class: bg,
+					state: hover focus,
+					responsive: true,
+					values: $utilities-bg-position
+	),
+	"background-repeat": (
+					property: background-repeat,
+					class: bg,
+					state: hover focus,
+					responsive: true,
+					values: repeat no-repeat repeat-x repeat-y round space
+	),
   "surface-background-color": (
     property: background-color,
     class: bg,
+		state: hover focus,
+		responsive: true,
     local-vars: (
       "bg-opacity": 1
     ),
@@ -261,22 +411,29 @@ $utilities: map-merge($utilities, (
   "static-background-color": (
     property: background-color,
     class: bg,
+		state: hover focus,
+		responsive: true,
     values: $utilities-static-bg-colors
   ),
   "bg-opacity": (
     css-var: true,
     class: bg-opacity,
-    state: hover,
+		state: hover focus,
+		responsive: true,
     values: $utilities-opacity-values
   ),
   "background-size": (
     property: background-size,
     class: bg,
+		state: hover focus,
+		responsive: true,
     values: auto cover contain
   ),
   "background-clip": (
     property: background-clip,
     class: bg-clip,
+		state: hover focus,
+		responsive: true,
     values: (
       border: border-box,
       padding: padding-box,
@@ -284,6 +441,27 @@ $utilities: map-merge($utilities, (
       text: text
     )
   ),
+	"list-image": (
+					property: list-style-image,
+					class: list-image,
+					state: hover focus,
+					responsive: true,
+					values: none
+	),
+	"list-position": (
+					property: list-style-position,
+					class: list,
+					state: hover focus,
+					responsive: true,
+					values: inside outside
+	),
+	"list-style-type": (
+					property: list-style-type,
+					class: list,
+					state: hover focus,
+					responsive: true,
+					values: none disc decimal
+	),
 
   // Shadow
   "shadow": (
@@ -305,6 +483,7 @@ $utilities: map-merge($utilities, (
   "width": (
     property: width,
     class: w,
+		state: hover focus,
     responsive: true,
     values: map-collect(
       $spacers,
@@ -322,7 +501,8 @@ $utilities: map-merge($utilities, (
   "min-width": (
     property: min-width,
     class: min-w,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       0: 0,
       full: 100%,
@@ -333,7 +513,8 @@ $utilities: map-merge($utilities, (
   "max-width": (
     property: max-width,
     class: max-w,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-collect(
       $screen-widths,
       (
@@ -350,7 +531,8 @@ $utilities: map-merge($utilities, (
   "height": (
     property: height,
     class: h,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-collect(
       $spacers,
       $percentage-sizers,
@@ -365,7 +547,8 @@ $utilities: map-merge($utilities, (
   "min-height": (
     property: min-height,
     class: min-h,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       0: 0,
       full: 100%,
@@ -375,7 +558,8 @@ $utilities: map-merge($utilities, (
   "max-height": (
     property: max-height,
     class: max-h,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-collect(
       $spacers,
       (
@@ -389,37 +573,43 @@ $utilities: map-merge($utilities, (
   // Position
   "position": (
     property: position,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: static relative absolute fixed sticky,
   ),
   "top": (
     property: top,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-merge($spacers, $position-values)
   ),
   "end": (
     property: right,
     class: end,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-merge($spacers, $position-values)
   ),
   "bottom": (
     property: bottom,
     class: bottom,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-merge($spacers, $position-values)
   ),
   "start": (
     property: left,
     class: start,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: map-merge($spacers, $position-values)
   ),
 
   // Flex
   "flex": (
     property: flex,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       1: 1 1 0%,
       fill: 1 1 auto,
@@ -429,7 +619,8 @@ $utilities: map-merge($utilities, (
   ),
   "align-content": (
     property: align-content,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       start: flex-start,
       end: flex-end,
@@ -442,7 +633,8 @@ $utilities: map-merge($utilities, (
   ),
   "place-content": (
     property: place-content,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       start: flex-start,
       end: flex-end,
@@ -457,17 +649,20 @@ $utilities: map-merge($utilities, (
   // Overflow
   "overflow": (
     property: overflow,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: auto hidden visible scroll
   ),
   "overflow-x": (
     property: overflow-x,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: auto hidden visible scroll
   ),
   "overflow-y": (
     property: overflow-y,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: auto hidden visible scroll
   ),
 
@@ -475,7 +670,8 @@ $utilities: map-merge($utilities, (
   "transition-property": (
     property: transition-property,
     class: transition,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       null: $transition-property,
       none: none,
@@ -489,7 +685,8 @@ $utilities: map-merge($utilities, (
   "transition-timing-function": (
     property: transition-timing-function,
     class: ease,
-    responsive: true,
+		state: hover focus,
+		responsive: true,
     values: (
       base: $transition-timing-function,
       linear: linear,
@@ -501,6 +698,8 @@ $utilities: map-merge($utilities, (
   "transition-duration": (
     property: transition-duration,
     class: duration,
+		state: hover focus,
+		responsive: true,
     values: (
       base: 150ms,
       75: 75ms,
@@ -516,6 +715,8 @@ $utilities: map-merge($utilities, (
   "transition-delay": (
     property: transition-delay,
     class: delay,
+		state: hover focus,
+		responsive: true,
     values: (
       75: 75ms,
       100: 100ms,
@@ -529,6 +730,8 @@ $utilities: map-merge($utilities, (
   ),
   "animation": (
     property: animation,
+		state: hover focus,
+		responsive: true,
     values: (
       none: none,
       spin: spin 1s linear infinite,
@@ -546,6 +749,8 @@ $utilities: map-merge($utilities, (
   "blur": (
     property: --#{$variable-prefix}blur,
     class: blur,
+		state: hover focus,
+		responsive: true,
     values: (
       5: 5px,
       10: 10px,
@@ -563,12 +768,13 @@ $utilities: map-merge($utilities, (
   "transform": (
     property: transform,
     values: none,
-    responsive: true
+		state: hover focus,
+		responsive: true,
   ),
   "transform-origin": (
     property: transform-origin,
     class: origin,
-    values: (
+		values: (
       center: center,
       top: top,
       top-right: top right,
