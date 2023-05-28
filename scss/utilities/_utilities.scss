@@ -116,31 +116,31 @@ $utilities: map-merge($utilities, (
 				),
 				"border-width-top": (
 								property: border-top-width,
-								class: border-top,
+								class: border-t,
 								state: hover,
 								responsive: true,
 								values: $utilities-border-widths
 				),
 				"border-width-end": (
 								property: border-right-width,
-								class: border-end,
+								class: border-e,
 								state: hover,
 								responsive: true,
-								values: $utilities-border-radius
+								values: $utilities-border-widths
 				),
 				"border-width-bottom": (
 								property: border-bottom-width,
-								class: border-bottom,
+								class: border-b,
 								state: hover,
 								responsive: true,
-								values: $utilities-border-radius
+								values: $utilities-border-widths
 				),
 				"border-width-start": (
 								property: border-left-width,
-								class: border-start,
+								class: border-s,
 								state: hover,
 								responsive: true,
-								values: $utilities-border-radius
+								values: $utilities-border-widths
 				),
 				"border-opacity": (
 								css-var: true,
