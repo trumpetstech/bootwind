@@ -751,8 +751,8 @@ $utilities: map-merge($utilities, (
 								responsive: true,
 								values: (
 								  auto: auto,
-									square: 1/1,
-									video: 16/9,
+									square: calc(1/1),
+									video: calc(16/9),
 								)
 				),
 
