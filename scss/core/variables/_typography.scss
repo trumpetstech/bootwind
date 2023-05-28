@@ -4,6 +4,7 @@
 
 $link-color:                              $primary !default;
 $link-decoration:                         none !default;
+$link-shade-percentage:                   20% !default;
 $link-hover-color:                        shade-color($link-color, 15%) !default;
 $link-hover-decoration:                   none !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
@@ -119,6 +120,8 @@ $lead-font-size:              $font-size-base * 1.125 !default;
 $lead-font-weight:            $font-weight-normal !default;
 
 $small-font-size:             .875em !default;
+
+$code-font-size:                    $small-font-size !default;
 
 $sub-sup-font-size:           .75em !default;
 

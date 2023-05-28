@@ -5,6 +5,7 @@
 // Border
 $border-width:                1px !default;
 $border-color:                $gray-200 !default;
+$box-shadow-color:					  var(--#{$prefix}box-shadow-color) !default;
 
 // Border radius
 $border-radius-sm:            .25rem !default;
@@ -22,13 +23,13 @@ $border-radius-pill:           50rem !default;
 $border-radius-circle:         50% !default;
 
 // Box shadow
-$box-shadow-sm:               0px 1px 1px 0px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow:                  0px 3px 3px -1px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow-lg:               0px 6px 6px -1px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow-xl:               0px 9px 9px -1px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow-2xl:              0px 16px 16px -1px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow-3xl:              0px 32px 40px -2px rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
-$box-shadow-4xl:              0px 36px 50px 0 rgba(10 22 70 / 10%), 0px 0px 1px 0px rgb(10 22 70 / 6%) !default;
+$box-shadow-sm:               0px 1px 1px 0px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow:                  0px 3px 3px -1px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow-lg:               0px 6px 6px -1px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow-xl:               0px 9px 9px -1px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow-2xl:              0px 16px 16px -1px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow-3xl:              0px 32px 40px -2px $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
+$box-shadow-4xl:              0px 36px 50px 0 $box-shadow-color, 0px 0px 1px 0px $box-shadow-color !default;
 
 $box-soft-shadow-sm:          0px 1px 1px 0px rgba(10 22 70 / 4%) !default;
 $box-soft-shadow:             0px 3px 3px -1px rgba(10 22 70 / 4%) !default;
@@ -50,3 +51,11 @@ $component-active-bg:         $primary !default;
 $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .85 !default;
+
+// scss-docs-start focus-ring-variables
+$focus-ring-width:      .25rem !default;
+$focus-ring-opacity:    .25 !default;
+$focus-ring-color:      rgba($primary, $focus-ring-opacity) !default;
+$focus-ring-blur:       0 !default;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
+// scss-docs-end focus-ring-variables

@@ -28,6 +28,42 @@ $utilities-static-text-colors: (
 				"reset": inherit,
 ) !default;
 
+$utilities-accent: map-merge(
+								$utilities-colors,
+								(
+												"white": to-rgb($white),
+												"black": to-rgb($black),
+												"body": to-rgb($body-color),
+												"muted": to-rgb($text-muted),
+												"heading": to-rgb($headings-color)
+								)
+) !default;
+$utilities-accent-colors: map-loop($utilities-text, rgba-css-var, "$key", "accent") !default;
+// scss-docs-end utilities-text-colors
+
+$utilities-static-accent-colors: (
+				"transparent": transparent,
+				"current": currentColor,
+				"reset": inherit,
+) !default;
+
+$utilities-caret: map-merge(
+								$utilities-colors,
+								(
+												"white": to-rgb($white),
+												"black": to-rgb($black),
+								)
+) !default;
+$utilities-caret-colors: map-loop($utilities-caret, rgba-css-var, "$key", "caret") !default;
+// scss-docs-end utilities-text-colors
+
+$utilities-static-caret-colors: (
+				"transparent": transparent,
+				"current": currentColor,
+				"reset": inherit,
+) !default;
+
+
 // scss-docs-start utilities-bg-colors
 $utilities-bg: map-merge(
 								$utilities-colors,
@@ -41,6 +77,12 @@ $utilities-bg: map-merge(
 $utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !default;
 // scss-docs-end utilities-bg-colors
 
+$utilities-static-bg-colors: (
+				"transparent": transparent,
+				"current": currentColor
+) !default;
+
+$utilities-surface-bg-colors: map-loop($surface-colors-rgb, rgba-css-var, "$key", "bg") !default;
 
 $utilities-bg-position: (
 				"bottom": bottom,
@@ -54,12 +96,17 @@ $utilities-bg-position: (
 				"top": top,
 ) !default;
 
-$utilities-static-bg-colors: (
-				"transparent": transparent,
-				"current": currentColor
+$utilities-object-position: (
+				"bottom": bottom,
+				"center": center,
+				"left": left,
+				"left-bottom": left bottom,
+				"left-top": left top,
+				"right": right,
+				"right-bottom": right bottom,
+				"right-top": right top,
+				"top": top,
 ) !default;
-
-$utilities-surface-bg-colors: map-loop($surface-colors-rgb, rgba-css-var, "$key", "bg") !default;
 
 // Typography
 $utilities-font-family-values: (
@@ -217,6 +264,7 @@ $utilities-static-border-color-values: (
 				"current": currentColor
 ) !default;
 
+
 $utilities-border-radius: (
 				null: $border-radius,
 				0: 0,
@@ -235,6 +283,17 @@ $utilities-border-radius: (
 				card: $card-border-radius
 ) !default;
 
+// scss-docs-start utilities-border-colors
+$utilities-outline: map-merge(
+								$utilities-colors,
+								(
+												"black": to-rgb($black),
+												"white": to-rgb($white)
+								)
+) !default;
+$utilities-outline-color-values: map-loop($utilities-outline, rgba-css-var, "$key", "outline") !default;
+// scss-docs-end utilities-border-colors
+
 // Opacity
 
 $utilities-opacity-values: (
@@ -249,6 +308,24 @@ $utilities-opacity-values: (
 				80: .8,
 				90: .9,
 				100: 1
+) !default;
+
+// scss-docs-start utilities-stroke-colors
+$utilities-stroke: map-merge(
+								$utilities-colors,
+								(
+												"black": to-rgb($black),
+												"white": to-rgb($white)
+								)
+) !default;
+$utilities-stroke-color-values: map-loop($utilities-stroke, rgba-css-var, "$key", "stroke") !default;
+// scss-docs-end utilities-border-colors
+
+$utilities-static-stroke-color-values: (
+				"none": none,
+				"inherit": inherit,
+				"transparent": transparent,
+				"current": currentColor
 ) !default;
 
 // Z-index values
@@ -331,5 +408,25 @@ $utilities-skew-values: (
 				3: 3deg,
 				6: 6deg,
 				12: 12deg,
+) !default;
+
+$utilities-blend-values: (
+				normal: normal,
+				multiply: multiply,
+				screen: screen,
+				overlay: overlay,
+				darken: darken,
+				lighten: lighten,
+				"color-dodge": color-dodge,
+				"color-burn": color-burn,
+				"hard-light": hard-light,
+				"soft-light": soft-light,
+				difference: difference,
+				exclusion: exclusion,
+				hue: hue,
+				saturation: saturation,
+				color: color,
+				luminosity: luminosity,
+				"plus-lighter": plus-lighter,
 ) !default;
 

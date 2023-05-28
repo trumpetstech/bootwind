@@ -89,4 +89,14 @@
 
   --#{$prefix}highlight-bg: #{$mark-bg};
 
+	// Focus styles
+	// scss-docs-start root-focus-variables
+	--#{$prefix}focus-ring-width: #{$focus-ring-width};
+	--#{$prefix}focus-ring-opacity: #{$focus-ring-opacity};
+	--#{$prefix}focus-ring-color: #{$focus-ring-color};
+	// scss-docs-end root-focus-variables
+
+	--#{$prefix}box-shadow-opacity: 0.25;
+	--#{$prefix}box-shadow-color: #{$slate-300};
+
 }

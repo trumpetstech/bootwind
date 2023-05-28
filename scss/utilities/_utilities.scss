@@ -17,885 +17,1188 @@
 
 // Custom utilities
 $utilities: map-merge($utilities, (
-  "viewport-height": null,
-  "min-viewport-height": null,
-  "min-viewport-width": null,
-  "viewport-width": null,
-  "opacity": (
-    property: opacity,
-		state: hover,
-	  responsive: true,
-    values: $utilities-opacity-values
-  ),
-  "zindex": (
-    property: z-index,
-    class: overlap,
-		state: hover,
-		responsive: true,
-    values: $utilities-zindex-values
-  ),
+				"viewport-height": null,
+				"min-viewport-height": null,
+				"min-viewport-width": null,
+				"viewport-width": null,
+				"opacity": (
+								property: opacity,
+								state: hover,
+								responsive: true,
+								values: $utilities-opacity-values
+				),
+				"zindex": (
+								property: z-index,
+								class: overlap,
+								state: hover,
+								responsive: true,
+								values: $utilities-zindex-values
+				),
+				"zindex-z": (
+								property: z-index,
+								class: z,
+								state: hover,
+								responsive: true,
+								values: $utilities-zindex-values
+				),
+	// Border radius
+				"rounded": (
+								property: border-radius,
+								class: rounded,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-top": (
+								property: border-top-left-radius border-top-right-radius,
+								class: rounded-top,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-end": (
+								property: border-top-right-radius border-bottom-right-radius,
+								class: rounded-end,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-bottom": (
+								property: border-bottom-right-radius border-bottom-left-radius,
+								class: rounded-bottom,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-start": (
+								property: border-bottom-left-radius border-top-left-radius,
+								class: rounded-start,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-top-start": (
+								property: border-top-left-radius,
+								class: rounded-top-start,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-top-end": (
+								property: border-top-right-radius,
+								class: rounded-top-end,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-bottom-end": (
+								property: border-bottom-right-radius,
+								class: rounded-bottom-end,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"rounded-bottom-start": (
+								property: border-bottom-left-radius,
+								class: rounded-bottom-start,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+	// Border
+				"border-width": (
+								css-var: true,
+								css-variable-name: border-width,
+								class: border,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-border-widths
+				),
+				"border-width-top": (
+								property: border-top-width,
+								class: border-top,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-widths
+				),
+				"border-width-end": (
+								property: border-right-width,
+								class: border-end,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"border-width-bottom": (
+								property: border-bottom-width,
+								class: border-bottom,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"border-width-start": (
+								property: border-left-width,
+								class: border-start,
+								state: hover,
+								responsive: true,
+								values: $utilities-border-radius
+				),
+				"border-opacity": (
+								css-var: true,
+								class: border-opacity,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-opacity-values
+				),
+				"border-color": (
+								property: border-color,
+								class: border,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"border-opacity": 1
+								),
+								values: $utilities-border-color-values
+				),
+				"static-border-color": (
+								property: border-color,
+								class: border,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-border-color-values
+				),
+				"border-style": (
+								css-var: true,
+								css-variable-name: border-style,
+								class: border,
+								state: hover focus,
+								responsive: true,
+								values: solid dashed dotted double groove none
+				),
+				"border": (
+								property: border,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+												0: 0,
+								)
+				),
+				"border-top": (
+								property: border-top,
+								class: border-top,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+												0: 0,
+								)
+				),
+				"border-end": (
+								property: border-right,
+								class: border-end,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+												0: 0,
+								)
+				),
+				"border-bottom": (
+								property: border-bottom,
+								class: border-bottom,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+												0: 0,
+								)
+				),
+				"border-start": (
+								property: border-left,
+								class: border-start,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+												0: 0,
+								)
+				),
+				"border-collapse": (
+								property: border-collapse,
+								class: border,
+								state: hover focus,
+								responsive: true,
+								values: collapse separate
+				),
+	// Outline
+				"outline-width": (
+								css-var: true,
+								css-variable-name: outline-width,
+								class: outline,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-border-widths
+				),
+				"outline-color": (
+								property: outline-color,
+								class: outline,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"outline-opacity": 1
+								),
+								values: $utilities-outline-color-values
+				),
+				"outline-style": (
+								css-var: true,
+								css-variable-name: outline-style,
+								class: outline,
+								state: hover focus,
+								responsive: true,
+								values: solid dashed dotted double none
+				),
+				"outline-offset": (
+								css-var: true,
+								css-variable-name: outline-offset,
+								class: outline-offset,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-border-widths
+				),
+				"focus-ring": (
+								css-var: true,
+								css-variable-name: focus-ring-color,
+								class: focus-ring,
+								state: hover focus,
+								local-vars: (
+												"focus-ring-opacity": 1
+								),
+								values: map-loop($utilities-colors, rgba-css-var, "$key", "focus-ring")
+				),
+				"shadow-color": (
+								css-var: true,
+								css-variable-name: box-shadow-color,
+								class: shadow,
+								state: hover focus,
+								local-vars: (
+												"box-shadow-color-opacity": 1
+								),
+								values: map-loop($utilities-colors, rgba-css-var, "$key", "box-shadow")
+				),
+	// Table
+				"table-layout": (
+								property: table-layout,
+								class: table,
+								state: hover focus,
+								responsive: true,
+								values: auto fixed,
+				),
+				"caption-side": (
+								property: caption-side,
+								class: caption,
+								state: hover focus,
+								responsive: true,
+								values: top bottom,
+				),
+	// Cursor
+				"cursor": (
+								property: cursor,
+								class: cursor,
+								state: hover focus,
+								responsive: true,
+								values: auto pointer wait text move help not-allowed none context-menu progress cell crosshair vertical-text alias copy no-drop grab grabbing all-scroll col-resize row-resize n-resize e-resize s-resize w-resize ne-resize nw-resize se-resize sw-resize ew-resize ns-resize nesw-resize nwse-resize zoom-in zoom-out,
+				),
+				"caret-color": (
+								property: caret-color,
+								class: caret,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"caret-opacity": 1
+								),
+								values: $utilities-caret-colors
+				),
+				"caret-static-color": (
+								property: caret-color,
+								class: caret,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-caret-colors
+				),
+				"pointer-events": (
+								property: pointer-events,
+								class: pointer-events,
+								state: hover focus,
+								responsive: true,
+								values: none auto,
+				),
+				"resize": (
+								property: resize,
+								class: resize,
+								state: hover focus,
+								responsive: true,
+								values: (
+												none: none,
+												y: vertical,
+												x: horizontal,
+												null: both
+								),
+				),
+				"scroll-behavior": (
+								property: scroll-behavior,
+								class: scroll,
+								state: hover focus,
+								responsive: true,
+								values: auto smooth,
+				),
+				"scroll-snap": (
+								property: scroll-snap-align,
+								class: snap,
+								state: hover focus,
+								responsive: true,
+								values: (
+												start: start,
+												end: end,
+												center: center,
+												"align-none": none
+								),
+				),
+				"scroll-snap-stop": (
+								property: scroll-snap-stop,
+								class: snap,
+								state: hover focus,
+								responsive: true,
+								values: normal always,
+				),
+				"scroll-snap-type": (
+								property: scroll-snap-type,
+								class: snap,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"scroll-snap-strictness": proximity
+								),
+								values: (
+												none: none,
+												x: x var(--#{$prefix}scroll-snap-strictness),
+												y: y var(--#{$prefix}scroll-snap-strictness),
+												both: both var(--#{$prefix}scroll-snap-strictness),
+								),
+				),
+				"scroll-snap-strictness": (
+								css-var: true,
+								css-variable-name: scroll-snap-strictness,
+								class: snap,
+								state: hover focus,
+								responsive: true,
+								values: mandatory proximity
+				),
+	// Touch
+				"touch": (
+								property: touch-action,
+								class: touch,
+								state: hover focus,
+								responsive: true,
+								values: auto none pan-x pan-left pan-right pan-y pan-up pan-down pinch-zoom manipulation,
+				),
+				"will-change": (
+								property: will-change,
+								class: will-change,
+								state: hover focus,
+								responsive: true,
+								values: auto scroll-position contents transform,
+				),
+	// Fonts and Text
+				"font-family": (
+								property: font-family,
+								class: font,
+								responsive: true,
+								values: $utilities-font-family-values
+				),
+				"font-size": (
+								rfs: true,
+								property: font-size,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-font-size-values
+				),
+				"font-style": (
+								property: font-style,
+								class: font,
+								state: hover focus,
+								responsive: true,
+								values: italic normal
+				),
+				"font-weight": (
+								property: font-weight,
+								class: font,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-font-weight-values
+				),
+				"font-variant": (
+								property: font-variant-numeric,
+								class: font,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-font-variant-values
+				),
+				"text-transform": (
+								property: text-transform,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								values: lowercase uppercase capitalize,
+				),
+				"text-align": (
+								property: text-align,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-text-align-values
+				),
+				"text-decoration": (
+								property: text-decoration,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-text-decoration-values
+				),
+				"text-decoration-color": (
+								property: text-decoration-color,
+								class: text-decoration,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"text-opacity": 1
+								),
+								values: $utilities-text-decoration-color-values,
+				),
+				"text-decoration-style": (
+								property: text-decoration-style,
+								class: text-decoration,
+								state: hover focus,
+								responsive: true,
+								values: solid double dotted dashed wavy
+				),
+				"text-decoration-thickness": (
+								property: text-decoration-thickness,
+								class: text-decoration,
+								state: hover focus,
+								responsive: true,
+								values: map-collect($utilities-border-widths, (auto: auto, "from-font": from-font))
+				),
+				"text-underline-offset": (
+								property: text-underline-offset,
+								class: text-underline-offset,
+								state: hover focus,
+								responsive: true,
+								values: map-collect($utilities-border-widths, (auto: auto))
+				),
+				"text-indent": (
+								property: text-indent,
+								class: text-indent,
+								state: hover focus,
+								responsive: true,
+								values: $spacer-values
+				),
+				"whitespace": (
+								property: white-space,
+								class: whitespace,
+								state: hover focus,
+								responsive: true,
+								values: normal nowrap pre pre-line pre-wrap break-spaces
+				),
+				"wordbreak": (
+								property: overflow-wrap word-break,
+								class: wordbreak,
+								state: hover focus,
+								responsive: true,
+								values: normal break-word break-all keep-all
+				),
+				"hyphens": (
+								property: hyphens,
+								class: hyphens,
+								state: hover focus,
+								responsive: true,
+								values: none manual auto
+				),
+				"line-height": (
+								property: line-height,
+								class: lh,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-line-height-values
+				),
+				"letter-spacing": (
+								property: letter-spacing,
+								class: ls,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-letter-spacing-values
+				),
+				"color": (
+								property: color,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"text-opacity": 1
+								),
+								values: $utilities-text-colors
+				),
+				"static-color": (
+								property: color,
+								class: text,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-text-colors
+				),
+				"text-opacity": (
+								css-var: true,
+								class: text-opacity,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-opacity-values
+				),
+				"accent": (
+								property: accent-color,
+								class: accent,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"accent-opacity": 1
+								),
+								values: $utilities-accent-colors
+				),
+				"static-accent": (
+								property: accent-color,
+								class: accent,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-accent-colors
+				),
+				"appearance": (
+								property: appearance,
+								class: appearance,
+								state: hover focus,
+								responsive: true,
+								values: none
+				),
+	// Background
+				"background-color": (
+								property: background-color,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"bg-opacity": 1
+								),
+								values: $utilities-bg-colors
+				),
+				"background-attachment": (
+								property: background-attachment,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								values: fixed local scroll
+				),
+				"background-origin": (
+								property: background-origin,
+								class: bg-origin,
+								state: hover focus,
+								responsive: true,
+								values: (
+												border: border-box,
+												padding: padding-box,
+												content: content-box
+								)
+				),
+				"background-position": (
+								property: background-position,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-bg-position
+				),
+				"object-position": (
+								property: object-position,
+								class: object,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-bg-position
+				),
+				"background-repeat": (
+								property: background-repeat,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								values: repeat no-repeat repeat-x repeat-y round space
+				),
+				"surface-background-color": (
+								property: background-color,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"bg-opacity": 1
+								),
+								values: $utilities-surface-bg-colors
+				),
+				"static-background-color": (
+								property: background-color,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-bg-colors
+				),
+				"bg-opacity": (
+								css-var: true,
+								class: bg-opacity,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-opacity-values
+				),
+				"background-size": (
+								property: background-size,
+								class: bg,
+								state: hover focus,
+								responsive: true,
+								values: auto cover contain
+				),
+				"background-clip": (
+								property: background-clip,
+								class: bg-clip,
+								state: hover focus,
+								responsive: true,
+								values: (
+												border: border-box,
+												padding: padding-box,
+												content: content-box,
+												text: text
+								)
+				),
+				"list-image": (
+								property: list-style-image,
+								class: list-image,
+								state: hover focus,
+								responsive: true,
+								values: none
+				),
+				"list-position": (
+								property: list-style-position,
+								class: list,
+								state: hover focus,
+								responsive: true,
+								values: inside outside
+				),
+				"list-style-type": (
+								property: list-style-type,
+								class: list,
+								state: hover focus,
+								responsive: true,
+								values: none disc decimal
+				),
+	// SVG
+				"fill-color": (
+								property: fill,
+								class: fill,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"fill-opacity": 1
+								),
+								values: map-loop($utilities-text-colors, rgba-css-var, "$key", "fill")
+				),
+				"fill-static-color": (
+								property: fill,
+								class: fill,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-text-colors
+				),
 
-  // Border radius
-  "rounded": (
-    property: border-radius,
-    class: rounded,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-top": (
-    property: border-top-left-radius border-top-right-radius,
-    class: rounded-top,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-end": (
-    property: border-top-right-radius border-bottom-right-radius,
-    class: rounded-end,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-bottom": (
-    property: border-bottom-right-radius border-bottom-left-radius,
-    class: rounded-bottom,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-start": (
-    property: border-bottom-left-radius border-top-left-radius,
-    class: rounded-start,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-top-start": (
-    property: border-top-left-radius,
-    class: rounded-top-start,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-top-end": (
-    property: border-top-right-radius,
-    class: rounded-top-end,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-bottom-end": (
-    property: border-bottom-right-radius,
-    class: rounded-bottom-end,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
-  "rounded-bottom-start": (
-    property: border-bottom-left-radius,
-    class: rounded-bottom-start,
-		state: hover,
-    responsive: true,
-    values: $utilities-border-radius
-  ),
+				"stroke-color": (
+								property: stroke,
+								class: stroke,
+								state: hover focus,
+								responsive: true,
+								local-vars: (
+												"stroke-opacity": 1
+								),
+								values: $utilities-stroke-color-values
+				),
+				"stroke-static-color": (
+								property: stroke,
+								class: stroke,
+								state: hover focus,
+								responsive: true,
+								values: $utilities-static-stroke-color-values
+				),
+				"stroke-width": (
+								property: stroke-width,
+								class: stroke,
+								state: hover focus,
+								responsive: true,
+								values: 0 1 2
+				),
 
-  // Border
-  "border-width": (
-    css-var: true,
-    css-variable-name: border-width,
-    class: border,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-border-widths
-  ),
-  "border-opacity": (
-    css-var: true,
-    class: border-opacity,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-opacity-values
-  ),
-  "border-color": (
-    property: border-color,
-    class: border,
-    state: hover focus,
-		responsive: true,
-    local-vars: (
-      "border-opacity": 1
-    ),
-    values: $utilities-border-color-values
-  ),
-  "static-border-color": (
-    property: border-color,
-    class: border,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-static-border-color-values
-  ),
-  "border-style": (
-    css-var: true,
-    css-variable-name: border-style,
-    class: border,
-		state: hover focus,
-		responsive: true,
-    values: solid dashed dotted double groove none
-  ),
-  "border": (
-    property: border,
-		state: hover focus,
-    responsive: true,
-    values: (
-      null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
-      0: 0,
-    )
-  ),
-  "border-top": (
-    property: border-top,
-    class: border-top,
-		state: hover focus,
-    responsive: true,
-    values: (
-      null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
-      0: 0,
-    )
-  ),
-  "border-end": (
-    property: border-right,
-    class: border-end,
-		state: hover focus,
-    responsive: true,
-    values: (
-      null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
-      0: 0,
-    )
-  ),
-  "border-bottom": (
-    property: border-bottom,
-    class: border-bottom,
-		state: hover focus,
-    responsive: true,
-    values: (
-      null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
-      0: 0,
-    )
-  ),
-  "border-start": (
-    property: border-left,
-    class: border-start,
-		state: hover focus,
-    responsive: true,
-    values: (
-      null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
-      0: 0,
-    )
-  ),
+				"aspect-ration": (
+								property: aspect-ratio,
+								class: aspect,
+								state: hover focus,
+								responsive: true,
+								values: (
+								  auto: auto,
+									square: 1/1,
+									video: 16/9,
+								)
+				),
 
-  // Cursor
-  "cursor": (
-    property: cursor,
-    class: cursor,
-		state: hover focus,
-		responsive: true,
-    values: auto pointer wait text,
-  ),
 
-  // Fonts and Text
-  "font-family": (
-    property: font-family,
-    class: font,
-		responsive: true,
-    values: $utilities-font-family-values
-  ),
-  "font-size": (
-    rfs: true,
-    property: font-size,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-font-size-values
-  ),
-  "font-style": (
-    property: font-style,
-    class: font,
-		state: hover focus,
-		responsive: true,
-    values: italic normal
-  ),
-  "font-weight": (
-    property: font-weight,
-    class: font,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-font-weight-values
-  ),
-	"font-variant": (
-					property: font-variant-numeric,
-					class: font,
-					state: hover focus,
-					responsive: true,
-					values: $utilities-font-variant-values
-	),
-  "text-transform": (
-    property: text-transform,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    values: lowercase uppercase capitalize,
-  ),
-  "text-align": (
-    property: text-align,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-text-align-values
-  ),
-  "text-decoration": (
-    property: text-decoration,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-text-decoration-values
-  ),
-	"text-decoration-color": (
-		property: text-decoration-color,
-		class: text-decoration,
-		state: hover focus,
-		responsive: true,
-		local-vars: (
-						"text-opacity": 1
-		),
-		values: $utilities-text-decoration-color-values,
-	),
-	"text-decoration-style": (
-			property: text-decoration-style,
-			class: text-decoration,
-			state: hover focus,
-			responsive: true,
-			values: solid double dotted dashed wavy
-	),
-	"text-decoration-thickness": (
-					property: text-decoration-thickness,
-					class: text-decoration,
-					state: hover focus,
-					responsive: true,
-					values: map-collect($utilities-border-widths, (auto: auto, "from-font": from-font))
-	),
-	"text-underline-offset": (
-					property: text-underline-offset,
-					class: text-underline-offset,
-					state: hover focus,
-					responsive: true,
-					values: map-collect($utilities-border-widths, (auto: auto))
-	),
-	"text-indent": (
-					property: text-indent,
-					class: text-indent,
-					state: hover focus,
-					responsive: true,
-					values: $spacer-values
-	),
-	"whitespace": (
-					property: white-space,
-					class: whitespace,
-					state: hover focus,
-					responsive: true,
-					values: normal nowrap pre pre-line pre-wrap break-spaces
-	),
-	"wordbreak": (
-					property: overflow-wrap word-break,
-					class: wordbreak,
-					state: hover focus,
-					responsive: true,
-					values: normal break-word break-all keep-all
-	),
-	"hyphens": (
-					property: hyphens,
-					class: hyphens,
-					state: hover focus,
-					responsive: true,
-					values: none manual auto
-	),
-  "line-height": (
-    property: line-height,
-    class: lh,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-line-height-values
-  ),
-  "letter-spacing": (
-    property: letter-spacing,
-    class: ls,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-letter-spacing-values
-  ),
-  "color": (
-    property: color,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    local-vars: (
-      "text-opacity": 1
-    ),
-    values: $utilities-text-colors
-  ),
-  "static-color": (
-    property: color,
-    class: text,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-static-text-colors
-  ),
-  "text-opacity": (
-    css-var: true,
-    class: text-opacity,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-opacity-values
-  ),
 
-  // Background
-  "background-color": (
-    property: background-color,
-    class: bg,
-		state: hover focus,
-		responsive: true,
-    local-vars: (
-      "bg-opacity": 1
-    ),
-    values: $utilities-bg-colors
-  ),
-	"background-attachment": (
-					property: background-attachment,
-					class: bg,
-					state: hover focus,
-					responsive: true,
-					values: fixed local scroll
-	),
-	"background-origin": (
-					property: background-origin,
-					class: bg-origin,
-					state: hover focus,
-					responsive: true,
-					values: (
-							border: border-box,
-							padding: padding-box,
-							content: content-box
-					)
-	),
-	"background-position": (
-					property: background-position,
-					class: bg,
-					state: hover focus,
-					responsive: true,
-					values: $utilities-bg-position
-	),
-	"background-repeat": (
-					property: background-repeat,
-					class: bg,
-					state: hover focus,
-					responsive: true,
-					values: repeat no-repeat repeat-x repeat-y round space
-	),
-  "surface-background-color": (
-    property: background-color,
-    class: bg,
-		state: hover focus,
-		responsive: true,
-    local-vars: (
-      "bg-opacity": 1
-    ),
-    values: $utilities-surface-bg-colors
-  ),
-  "static-background-color": (
-    property: background-color,
-    class: bg,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-static-bg-colors
-  ),
-  "bg-opacity": (
-    css-var: true,
-    class: bg-opacity,
-		state: hover focus,
-		responsive: true,
-    values: $utilities-opacity-values
-  ),
-  "background-size": (
-    property: background-size,
-    class: bg,
-		state: hover focus,
-		responsive: true,
-    values: auto cover contain
-  ),
-  "background-clip": (
-    property: background-clip,
-    class: bg-clip,
-		state: hover focus,
-		responsive: true,
-    values: (
-      border: border-box,
-      padding: padding-box,
-      content: content-box,
-      text: text
-    )
-  ),
-	"list-image": (
-					property: list-style-image,
-					class: list-image,
-					state: hover focus,
-					responsive: true,
-					values: none
-	),
-	"list-position": (
-					property: list-style-position,
-					class: list,
-					state: hover focus,
-					responsive: true,
-					values: inside outside
-	),
-	"list-style-type": (
-					property: list-style-type,
-					class: list,
-					state: hover focus,
-					responsive: true,
-					values: none disc decimal
-	),
+	// Shadow
+				"shadow": (
+								property: box-shadow,
+								class: shadow,
+								responsive: true,
+								state: hover focus,
+								values: $utilities-shadows
+				),
+				"soft-shadow": (
+								property: box-shadow,
+								class: shadow-soft,
+								responsive: true,
+								state: hover focus,
+								values: $utilities-soft-shadows
+				),
+				"mix-blend": (
+								property: mix-blend-mode,
+								class: mix-blend,
+								responsive: true,
+								state: hover focus,
+								values: $utilities-blend-values
+				),
+				"background-blend": (
+								property: background-blend-mode,
+								class: bg-blend,
+								responsive: true,
+								state: hover focus,
+								values: $utilities-blend-values
+				),
 
-  // Shadow
-  "shadow": (
-    property: box-shadow,
-    class: shadow,
-    responsive: true,
-    state: hover focus,
-    values: $utilities-shadows
-  ),
-  "soft-shadow": (
-    property: box-shadow,
-    class: shadow-soft,
-    responsive: true,
-    state: hover focus,
-    values: $utilities-soft-shadows
-  ),
 
-  // Widths
-  "width": (
-    property: width,
-    class: w,
-		state: hover focus,
-    responsive: true,
-    values: map-collect(
-      $spacers,
-      $percentage-sizers,
-      $screen-widths,
-      (
-        auto: auto,
-        full: 100%,
-        screen: 100vw,
-        min: min-content,
-        max: max-content
-      )
-    )
-  ),
-  "min-width": (
-    property: min-width,
-    class: min-w,
-		state: hover focus,
-		responsive: true,
-    values: (
-      0: 0,
-      full: 100%,
-      min: min-content,
-      max: max-content
-    )
-  ),
-  "max-width": (
-    property: max-width,
-    class: max-w,
-		state: hover focus,
-		responsive: true,
-    values: map-collect(
-      $screen-widths,
-      (
-        0: 0,
-        full: 100%,
-        read: 65ch,
-        min: min-content,
-        max: max-content
-      )
-    ),
-  ),
-
-  // Heights
-  "height": (
-    property: height,
-    class: h,
-		state: hover focus,
-		responsive: true,
-    values: map-collect(
-      $spacers,
-      $percentage-sizers,
-      (
-          px: 1px,
-          auto: auto,
-          full: 100%,
-          screen: 100vh
-      )
-    )
-  ),
-  "min-height": (
-    property: min-height,
-    class: min-h,
-		state: hover focus,
-		responsive: true,
-    values: (
-      0: 0,
-      full: 100%,
-      screen: 100vh
-    )
-  ),
-  "max-height": (
-    property: max-height,
-    class: max-h,
-		state: hover focus,
-		responsive: true,
-    values: map-collect(
-      $spacers,
-      (
-        px: 1px,
-        full: 100%,
-        screen: 100vh
-      )
-    )
-  ),
-
-  // Position
-  "position": (
-    property: position,
-		state: hover focus,
-		responsive: true,
-    values: static relative absolute fixed sticky,
-  ),
-  "top": (
-    property: top,
-		state: hover focus,
-		responsive: true,
-    values: map-merge($spacers, $position-values)
-  ),
-  "end": (
-    property: right,
-    class: end,
-		state: hover focus,
-		responsive: true,
-    values: map-merge($spacers, $position-values)
-  ),
-  "bottom": (
-    property: bottom,
-    class: bottom,
-		state: hover focus,
-		responsive: true,
-    values: map-merge($spacers, $position-values)
-  ),
-  "start": (
-    property: left,
-    class: start,
-		state: hover focus,
-		responsive: true,
-    values: map-merge($spacers, $position-values)
-  ),
-
-  // Flex
-  "flex": (
-    property: flex,
-		state: hover focus,
-		responsive: true,
-    values: (
-      1: 1 1 0%,
-      fill: 1 1 auto,
-      initial: 0 1 auto,
-      none: none
-    )
-  ),
-  "align-content": (
-    property: align-content,
-		state: hover focus,
-		responsive: true,
-    values: (
-      start: flex-start,
-      end: flex-end,
-      center: center,
-      between: space-between,
-      around: space-around,
-      evenly: space-evenly,
-      stretch: stretch
-    )
-  ),
-  "place-content": (
-    property: place-content,
-		state: hover focus,
-		responsive: true,
-    values: (
-      start: flex-start,
-      end: flex-end,
-      center: center,
-      between: space-between,
-      around: space-around,
-      evenly: space-evenly,
-      stretch: stretch,
-    )
-  ),
-
-  // Overflow
-  "overflow": (
-    property: overflow,
-		state: hover focus,
-		responsive: true,
-    values: auto hidden visible scroll
-  ),
-  "overflow-x": (
-    property: overflow-x,
-		state: hover focus,
-		responsive: true,
-    values: auto hidden visible scroll
-  ),
-  "overflow-y": (
-    property: overflow-y,
-		state: hover focus,
-		responsive: true,
-    values: auto hidden visible scroll
-  ),
-
-  // Transitions
-  "transition-property": (
-    property: transition-property,
-    class: transition,
-		state: hover focus,
-		responsive: true,
-    values: (
-      null: $transition-property,
-      none: none,
-      all: all,
-      colors: $transition-property-colors,
-      opacity: opacity,
-      shadow: box-shadow,
-      transform: transform,
-    ),
-  ),
-  "transition-timing-function": (
-    property: transition-timing-function,
-    class: ease,
-		state: hover focus,
-		responsive: true,
-    values: (
-      base: $transition-timing-function,
-      linear: linear,
-      in: $transition-in-timing-function,
-      out: $transition-out-timing-function,
-      in-out: $transition-in-out-timing-function,
-    )
-  ),
-  "transition-duration": (
-    property: transition-duration,
-    class: duration,
-		state: hover focus,
-		responsive: true,
-    values: (
-      base: 150ms,
-      75: 75ms,
-      100: 100ms,
-      150: 150ms,
-      200: 200ms,
-      300: 300ms,
-      500: 500ms,
-      700: 700ms,
-      1000: 1000ms,
-    )
-  ),
-  "transition-delay": (
-    property: transition-delay,
-    class: delay,
-		state: hover focus,
-		responsive: true,
-    values: (
-      75: 75ms,
-      100: 100ms,
-      150: 150ms,
-      200: 200ms,
-      300: 300ms,
-      500: 500ms,
-      700: 700ms,
-      1000: 1000ms,
-    )
-  ),
-  "animation": (
-    property: animation,
-		state: hover focus,
-		responsive: true,
-    values: (
-      none: none,
-      spin: spin 1s linear infinite,
-      ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite,
-      pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite,
-      bounce: bounce 1s infinite,
-      slide-left: slideLeft 3s infinite,
-      slide-right: slideRight 3s infinite,
-      move-slow-left: slideLeft 15s linear infinite,
-      move-slow-right: slideRight 15s linear infinite,
-    )
-  ),
-
-  // Filter
-  "blur": (
-    property: --#{$variable-prefix}blur,
-    class: blur,
-		state: hover focus,
-		responsive: true,
-    values: (
-      5: 5px,
-      10: 10px,
-      25: 25px,
-      50: 50px,
-      75: 75px,
-      100: 100px,
-      125: 125px,
-      150: 150px,
-      200: 200px
-    )
-  ),
-
-  // Transforms
-  "transform": (
-    property: transform,
-    values: none,
-		state: hover focus,
-		responsive: true,
-  ),
-  "transform-origin": (
-    property: transform-origin,
-    class: origin,
-		values: (
-      center: center,
-      top: top,
-      top-right: top right,
-      right: right,
-      bottom-right: bottom right,
-      bottom: bottom,
-      bottom-left: bottom left,
-      left: left,
-      top-left: top left
-    )
-  ),
-  "scale": (
-    property: --#{$variable-prefix}scale-x --#{$variable-prefix}scale-y,
-    class: scale,
-    state: hover,
-    responsive: true,
-    values: $utilities-scale-values
-  ),
-  "scale-y": (
-    property: --#{$variable-prefix}-scale-y,
-    class: scale-y,
-    responsive: true,
-    values: $utilities-scale-values
-  ),
-  "scale-x": (
-    property: --#{$variable-prefix}-scale-x,
-    class: scale-x,
-    responsive: true,
-    values: $utilities-scale-values
-  ),
-  "rotate":  (
-    property: --#{$variable-prefix}rotate,
-    class: rotate,
-    state: hover,
-    responsive: true,
-    values: $utilities-rotate-values
-  ),
-  "negative-rotate":  (
-    property: --#{$variable-prefix}rotate,
-    class: rotate,
-    state: hover,
-    responsive: true,
-    values: negativify-map($utilities-rotate-values)
-  ),
-  "rotate-y":  (
-    property: --#{$variable-prefix}rotate-y,
-    class: rotate-y,
-    responsive: true,
-    values: $utilities-rotate-values
-  ),
-  "negative-rotate-y": (
-    property: --#{$variable-prefix}rotate-y,
-    class: rotate-y,
-    state: hover,
-    responsive: true,
-    values: negativify-map($utilities-rotate-values)
-  ),
-  "rotate-x":  (
-    property: --#{$variable-prefix}rotate-x,
-    class: rotate-x,
-    responsive: true,
-    values: $utilities-rotate-values
-  ),
-  "negative-rotate-x": (
-    property: --#{$variable-prefix}rotate-x,
-    class: rotate-x,
-    responsive: true,
-    values: negativify-map($utilities-rotate-values)
-  ),
-  "perspective": (
-    property: --#{$variable-prefix}perspective,
-    class: perspective,
-    responsive: true,
-    values: $utilities-perspective-values
-  ),
-  "translate-y": (
-    property: --#{$variable-prefix}translate-y,
-    class: translate-y,
-    state: hover,
-    responsive: true,
-    values: $utilities-translate-values
-  ),
-  "negative-translate-y": (
-    property: --#{$variable-prefix}translate-y,
-    class: translate-y,
-    state: hover,
-    responsive: true,
-    values: negativify-map($utilities-translate-values)
-  ),
-  "translate-x": (
-    property: --#{$variable-prefix}translate-x,
-    class: translate-x,
-    state: hover,
-    responsive: true,
-    values: $utilities-translate-values
-  ),
-  "negative-translate-x": (
-    property: --#{$variable-prefix}translate-x,
-    class: translate-x,
-    state: hover,
-    responsive: true,
-    values: negativify-map($utilities-translate-values)
-  ),
-  "skew-y": (
-    property: --#{$variable-prefix}skew-y,
-    class: skew-y,
-    values: $utilities-skew-values
-  ),
-  "negative-skew-y": (
-    property: --#{$variable-prefix}skew-y,
-    class: skew-y,
-    values: negativify-map($utilities-skew-values)
-  ),
-  "skew-x": (
-    property: --#{$variable-prefix}skew-x,
-    class: skew-x,
-    values: $utilities-skew-values
-  ),
-  "negative-skew-x": (
-    property: --#{$variable-prefix}skew-x,
-    class: skew-x,
-    values: negativify-map($utilities-skew-values)
-  )
+	// Widths
+				"width": (
+								property: width,
+								class: w,
+								state: hover focus,
+								responsive: true,
+								values: map-collect(
+																$spacers,
+																$percentage-sizers,
+																$screen-widths,
+																(
+																				auto: auto,
+																				full: 100%,
+																				screen: 100vw,
+																				min: min-content,
+																				max: max-content
+																)
+								)
+				),
+				"min-width": (
+								property: min-width,
+								class: min-w,
+								state: hover focus,
+								responsive: true,
+								values: (
+												0: 0,
+												full: 100%,
+												min: min-content,
+												max: max-content
+								)
+				),
+				"max-width": (
+								property: max-width,
+								class: max-w,
+								state: hover focus,
+								responsive: true,
+								values: map-collect(
+																$screen-widths,
+																(
+																				0: 0,
+																				full: 100%,
+																				read: 65ch,
+																				min: min-content,
+																				max: max-content
+																)
+								),
+				),
+	// Heights
+				"height": (
+								property: height,
+								class: h,
+								state: hover focus,
+								responsive: true,
+								values: map-collect(
+																$spacers,
+																$percentage-sizers,
+																(
+																				px: 1px,
+																				auto: auto,
+																				full: 100%,
+																				screen: 100vh
+																)
+								)
+				),
+				"min-height": (
+								property: min-height,
+								class: min-h,
+								state: hover focus,
+								responsive: true,
+								values: (
+												0: 0,
+												full: 100%,
+												screen: 100vh
+								)
+				),
+				"max-height": (
+								property: max-height,
+								class: max-h,
+								state: hover focus,
+								responsive: true,
+								values: map-collect(
+																$spacers,
+																(
+																				px: 1px,
+																				full: 100%,
+																				screen: 100vh
+																)
+								)
+				),
+	// Position
+				"position": (
+								property: position,
+								state: hover focus,
+								responsive: true,
+								values: static relative absolute fixed sticky,
+				),
+				"top": (
+								property: top,
+								state: hover focus,
+								responsive: true,
+								values: map-merge($spacers, $position-values)
+				),
+				"end": (
+								property: right,
+								class: end,
+								state: hover focus,
+								responsive: true,
+								values: map-merge($spacers, $position-values)
+				),
+				"bottom": (
+								property: bottom,
+								class: bottom,
+								state: hover focus,
+								responsive: true,
+								values: map-merge($spacers, $position-values)
+				),
+				"start": (
+								property: left,
+								class: start,
+								state: hover focus,
+								responsive: true,
+								values: map-merge($spacers, $position-values)
+				),
+	// Flex
+				"flex": (
+								property: flex,
+								state: hover focus,
+								responsive: true,
+								values: (
+												1: 1 1 0%,
+												fill: 1 1 auto,
+												initial: 0 1 auto,
+												none: none
+								)
+				),
+				"align-content": (
+								property: align-content,
+								state: hover focus,
+								responsive: true,
+								values: (
+												start: flex-start,
+												end: flex-end,
+												center: center,
+												between: space-between,
+												around: space-around,
+												evenly: space-evenly,
+												stretch: stretch
+								)
+				),
+				"place-content": (
+								property: place-content,
+								state: hover focus,
+								responsive: true,
+								values: (
+												start: flex-start,
+												end: flex-end,
+												center: center,
+												between: space-between,
+												around: space-around,
+												evenly: space-evenly,
+												stretch: stretch,
+								)
+				),
+	// Overflow
+				"overflow": (
+								property: overflow,
+								state: hover focus,
+								responsive: true,
+								values: auto hidden visible scroll
+				),
+				"overflow-x": (
+								property: overflow-x,
+								state: hover focus,
+								responsive: true,
+								values: auto hidden visible scroll
+				),
+				"overflow-y": (
+								property: overflow-y,
+								state: hover focus,
+								responsive: true,
+								values: auto hidden visible scroll
+				),
+	// Transitions
+				"transition-property": (
+								property: transition-property,
+								class: transition,
+								state: hover focus,
+								responsive: true,
+								values: (
+												null: $transition-property,
+												none: none,
+												all: all,
+												colors: $transition-property-colors,
+												opacity: opacity,
+												shadow: box-shadow,
+												transform: transform,
+								),
+				),
+				"transition-timing-function": (
+								property: transition-timing-function,
+								class: ease,
+								state: hover focus,
+								responsive: true,
+								values: (
+												base: $transition-timing-function,
+												linear: linear,
+												in: $transition-in-timing-function,
+												out: $transition-out-timing-function,
+												in-out: $transition-in-out-timing-function,
+								)
+				),
+				"transition-duration": (
+								property: transition-duration,
+								class: duration,
+								state: hover focus,
+								responsive: true,
+								values: (
+												base: 150ms,
+												75: 75ms,
+												100: 100ms,
+												150: 150ms,
+												200: 200ms,
+												300: 300ms,
+												500: 500ms,
+												700: 700ms,
+												1000: 1000ms,
+								)
+				),
+				"transition-delay": (
+								property: transition-delay,
+								class: delay,
+								state: hover focus,
+								responsive: true,
+								values: (
+												75: 75ms,
+												100: 100ms,
+												150: 150ms,
+												200: 200ms,
+												300: 300ms,
+												500: 500ms,
+												700: 700ms,
+												1000: 1000ms,
+								)
+				),
+				"animation": (
+								property: animation,
+								state: hover focus,
+								responsive: true,
+								values: (
+												none: none,
+												spin: spin 1s linear infinite,
+												ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite,
+												pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite,
+												bounce: bounce 1s infinite,
+												slide-left: slideLeft 3s infinite,
+												slide-right: slideRight 3s infinite,
+												move-slow-left: slideLeft 15s linear infinite,
+												move-slow-right: slideRight 15s linear infinite,
+								)
+				),
+	// Filter
+				"blur": (
+								property: --#{$variable-prefix}blur,
+								class: blur,
+								state: hover focus,
+								responsive: true,
+								values: (
+												5: 5px,
+												10: 10px,
+												25: 25px,
+												50: 50px,
+												75: 75px,
+												100: 100px,
+												125: 125px,
+												150: 150px,
+												200: 200px
+								)
+				),
+	// Transforms
+				"transform": (
+								property: transform,
+								values: none,
+								state: hover focus,
+								responsive: true,
+				),
+				"transform-origin": (
+								property: transform-origin,
+								class: origin,
+								values: (
+												center: center,
+												top: top,
+												top-right: top right,
+												right: right,
+												bottom-right: bottom right,
+												bottom: bottom,
+												bottom-left: bottom left,
+												left: left,
+												top-left: top left
+								)
+				),
+				"scale": (
+								property: --#{$variable-prefix}scale-x --#{$variable-prefix}scale-y,
+								class: scale,
+								state: hover,
+								responsive: true,
+								values: $utilities-scale-values
+				),
+				"scale-y": (
+								property: --#{$variable-prefix}-scale-y,
+								class: scale-y,
+								responsive: true,
+								values: $utilities-scale-values
+				),
+				"scale-x": (
+								property: --#{$variable-prefix}-scale-x,
+								class: scale-x,
+								responsive: true,
+								values: $utilities-scale-values
+				),
+				"rotate": (
+								property: --#{$variable-prefix}rotate,
+								class: rotate,
+								state: hover,
+								responsive: true,
+								values: $utilities-rotate-values
+				),
+				"negative-rotate": (
+								property: --#{$variable-prefix}rotate,
+								class: rotate,
+								state: hover,
+								responsive: true,
+								values: negativify-map($utilities-rotate-values)
+				),
+				"rotate-y": (
+								property: --#{$variable-prefix}rotate-y,
+								class: rotate-y,
+								responsive: true,
+								values: $utilities-rotate-values
+				),
+				"negative-rotate-y": (
+								property: --#{$variable-prefix}rotate-y,
+								class: rotate-y,
+								state: hover,
+								responsive: true,
+								values: negativify-map($utilities-rotate-values)
+				),
+				"rotate-x": (
+								property: --#{$variable-prefix}rotate-x,
+								class: rotate-x,
+								responsive: true,
+								values: $utilities-rotate-values
+				),
+				"negative-rotate-x": (
+								property: --#{$variable-prefix}rotate-x,
+								class: rotate-x,
+								responsive: true,
+								values: negativify-map($utilities-rotate-values)
+				),
+				"perspective": (
+								property: --#{$variable-prefix}perspective,
+								class: perspective,
+								responsive: true,
+								values: $utilities-perspective-values
+				),
+				"translate-y": (
+								property: --#{$variable-prefix}translate-y,
+								class: translate-y,
+								state: hover,
+								responsive: true,
+								values: $utilities-translate-values
+				),
+				"negative-translate-y": (
+								property: --#{$variable-prefix}translate-y,
+								class: translate-y,
+								state: hover,
+								responsive: true,
+								values: negativify-map($utilities-translate-values)
+				),
+				"translate-x": (
+								property: --#{$variable-prefix}translate-x,
+								class: translate-x,
+								state: hover,
+								responsive: true,
+								values: $utilities-translate-values
+				),
+				"negative-translate-x": (
+								property: --#{$variable-prefix}translate-x,
+								class: translate-x,
+								state: hover,
+								responsive: true,
+								values: negativify-map($utilities-translate-values)
+				),
+				"skew-y": (
+								property: --#{$variable-prefix}skew-y,
+								class: skew-y,
+								values: $utilities-skew-values
+				),
+				"negative-skew-y": (
+								property: --#{$variable-prefix}skew-y,
+								class: skew-y,
+								values: negativify-map($utilities-skew-values)
+				),
+				"skew-x": (
+								property: --#{$variable-prefix}skew-x,
+								class: skew-x,
+								values: $utilities-skew-values
+				),
+				"negative-skew-x": (
+								property: --#{$variable-prefix}skew-x,
+								class: skew-x,
+								values: negativify-map($utilities-skew-values)
+				)
 ));
