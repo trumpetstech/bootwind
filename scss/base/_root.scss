@@ -31,6 +31,18 @@
     --#{$prefix}#{$color}-rgb: #{$value};
   }
 
+	@each $color, $value in $theme-colors-text {
+		--#{$prefix}#{$color}-text-emphasis: #{$value};
+	}
+
+	@each $color, $value in $theme-colors-bg-subtle {
+		--#{$prefix}#{$color}-bg-subtle: #{$value};
+	}
+
+	@each $color, $value in $theme-colors-border-subtle {
+		--#{$prefix}#{$color}-border-subtle: #{$value};
+	}
+
   --#{$prefix}white-rgb: #{to-rgb($white)};
   --#{$prefix}black-rgb: #{to-rgb($black)};
   --#{$prefix}muted-rgb: #{to-rgb($text-muted)};
